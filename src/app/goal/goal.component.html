@@ -17,6 +17,7 @@
       <mat-card-content>
         <p class="goal-amount">{{goal.goalAmount | currency:'INR':'symbol'}}</p>
         <p class="target-date">Target Date: {{goal.targetDate | date}}</p>
+        <p class="target-date">Amount to save each month: {{goal.perMonthAmount | currency:'INR':'symbol'}}</p>
         <div class="progress-bar-container">
           <mat-progress-bar
             mode="determinate"
