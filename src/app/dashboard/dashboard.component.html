@@ -1,0 +1,92 @@
+<!-- 
+<div class="header">
+  <div class="title">Finance Navigator</div>
+</div>
+<div class="container">
+  <div class="sidebar" [ngClass]="{ collapsed: isCollapsed }">
+    <button (click)="toggleSidebar()" class="toggle-button">
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="nav-item" routerLink="/dashboard" routerLinkActive="active">
+      <i *ngIf="isCollapsed" class="fa fa-home"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-home"
+        ><span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Home</span
+        ></i
+      >
+    </div>
+    <div class="nav-item" routerLink="/report" routerLinkActive="active">
+      <span style="opacity: 0">.</span>
+      <i *ngIf="isCollapsed" class="fa fa-file"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-file"
+        ><span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Report</span
+        ></i
+      >
+    </div>
+    <div class="nav-item logout" (click)="logout()">
+      <i *ngIf="isCollapsed" class="fa fa-sign-out"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-sign-out">
+        <span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Logout</span
+        ></i
+      >
+    </div>
+  </div>
+ 
+</div>  -->
+
+
+<div class="header">
+  <div class="title">Finance Navigator</div>
+</div>
+<div class="container">
+  <div class="sidebar" [ngClass]="{'collapsed': isCollapsed}">
+    <!-- <button (click)="toggleSidebar()" class="toggle-button">
+      <i class="fa fa-bars"></i>
+    </button> -->
+    <div class="nav-item" routerLink="/dashboard" routerLinkActive="active" (click)="toggleSidebar()">
+      <i *ngIf="isCollapsed" class="fa fa-home"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-home"><span style="font-family: Arial; font-size: 14px; margin-left: 10px;">Home</span></i>
+    </div>
+    <div class="nav-item" routerLink="/report" routerLinkActive="active" (click)="toggleSidebar()">
+      <span style="opacity: 0;">.</span> <i *ngIf="isCollapsed" class="fa fa-file"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-file"><span style="font-family: Arial; font-size: 14px; margin-left: 10px;">Report</span></i>
+    </div>
+    <div class="nav-item logout" (click)="logout()">
+      <i *ngIf="isCollapsed" class="fa fa-sign-out"></i>
+      <i *ngIf="!isCollapsed" class="fa fa-sign-out"> <span style="font-family: Arial; font-size: 14px; margin-left: 10px;">Logout</span></i>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main">
+      <div class="welcome">
+        <h1>Welcome, {{ username }}!</h1>
+        <p>
+          Your current balance:
+          <span class="balance"
+            ><i class="fas fa-rupee-sign"></i> {{ data.remainingBalance }}</span
+          >
+        </p>
+        <div class="grid-container">
+          <div class="grid-item">
+            <h3>Earnings</h3>
+            <app-earning [data]="data"></app-earning>
+          </div>
+          <div class="grid-item">
+            <h3>Expenses</h3>
+            <app-expense [data]="data"></app-expense>
+          </div>
+          <div class="grid-item">
+            <h3>Budgets</h3>
+            <app-budget [data]="data"></app-budget>
+          </div>
+          <div class="grid-item">
+            <h3>Goals</h3>
+            <app-goal [data]="data"></app-goal>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
