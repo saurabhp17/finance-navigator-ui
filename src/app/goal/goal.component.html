@@ -11,9 +11,11 @@
         <button mat-icon-button (click)="deleteGoal(goal.goalName)">
           <mat-icon>delete</mat-icon>
         </button>
+
+        
       </mat-card-header>
       <mat-card-content>
-        <p class="goal-amount">{{goal.goalAmount | currency}}</p>
+        <p class="goal-amount">{{goal.goalAmount | currency:'INR':'symbol'}}</p>
         <p class="target-date">Target Date: {{goal.targetDate | date}}</p>
         <div class="progress-bar-container">
           <mat-progress-bar
