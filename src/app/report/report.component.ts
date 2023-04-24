@@ -15,7 +15,6 @@ export class ReportComponent implements OnInit {
   data: DataInterface;
   username: string;
   errorMessage: string;
-  isCollapsed = false;
   currentBalance: number;
   chart: any;
 
@@ -99,12 +98,6 @@ export class ReportComponent implements OnInit {
     });
   }
   
-  
-
-
-  toggleSidebar() {
-    this.isCollapsed = !this.isCollapsed;
-  }
 
   logout() {
     this.apiService.logout();

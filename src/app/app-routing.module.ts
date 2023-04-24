@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [LoginGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'report', component: ReportComponent, canActivate: [AuthGuard] }
+  { path: 'report', component: ReportComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'dashboard' },
 
 ];
 

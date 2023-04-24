@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   };;
   username: string;
   errorMessage: string;
-  isCollapsed = false;
 
   constructor(
     private apiService: ApiService,
@@ -61,9 +60,6 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  toggleSidebar() {
-    this.isCollapsed = !this.isCollapsed;
-  }
 
   logout() {
     this.apiService.logout();
